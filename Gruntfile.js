@@ -6,10 +6,20 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
+        react: {
+            combined_file_output: {
+                files: {
+                    'src/js/app.js': [
+                        'src/jsx/App.jsx'
+                    ]
+                }
+            }
+        },
+
         uglify: {
             my_target: {
                 files: {
-                    'dist/js/app.js': 'src/js/*.js'
+                    'dist/js/app.min.js': 'src/js/*.js'
                 }
             }
         },
@@ -41,8 +51,8 @@ module.exports = function(grunt) {
             },
 
             scripts: {
-                files: ['src/js/*.js'],
-                tasks: ['uglify']
+                files: ['src/jsx/*.jsx'],
+                tasks: ['react', 'uglify']
             }
         }
 
@@ -52,6 +62,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-react');
 
     grunt.registerTask('default', ['watch']);
 
