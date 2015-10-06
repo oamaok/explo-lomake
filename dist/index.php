@@ -32,6 +32,9 @@ require_once "inc/init.php";
                 <input type="text" name="last-name" id="last-name">
             </div>
         </div>
+        <div id="app">
+        </div>
+        <!-- 
         <div class="package">
             <h2>ExploTASKU 1: Haaveile</h2>
             <div class="activity">
@@ -79,6 +82,10 @@ require_once "inc/init.php";
                 </div>
             </div>
         </div>
+        -->
     </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/react.js"></script>
+    <script src="js/app.min.js"></script>
 </body>
 </html>
